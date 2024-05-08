@@ -48,6 +48,9 @@ public class MapUtils {
     }
 
     public static Collection<Player> getTrackedPlayers(MapView mapView) {
+    if (craftMapViewWorldMapField == null) {
+        return Collections.emptySet();
+    }
         craftMapViewWorldMapField.setAccessible(true);
         nmsWorldMapHumansField.setAccessible(true);
         try {
